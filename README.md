@@ -23,7 +23,7 @@ Here are some ideas to get you started:
 
 <div align="center">
   <img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey%2C+I'm+Valiantlynx+and+Welcome+to+my+Profile!" alt="Hey, I'm Wael and Welcome to my Profile! animated typed out" width="90%" align="middle"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey%2C+I'm+wkn00+and+Welcome+to+my+Profile!" alt="Hey, I'm Wael and Welcome to my Profile! animated typed out" width="90%" align="middle"/>
   <img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
 </div>
 
