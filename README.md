@@ -7,10 +7,11 @@
 ---
 
 ## 👋 About Me
-I am a data engineering student at the University of Agder, specializing in networking and security. My academic journey has provided me with a strong foundation in:
+I am a Computer engineering student at the University of Agder, specializing in networking and security. My academic journey has provided me with a strong foundation in:
 - Network architecture
 - Cybersecurity
 - Software development
+- DevOps
 
 I am particularly enthusiastic about telecommunications and maritime technology, and I am eager to apply my knowledge to improve network quality and communication in maritime environments.
 
@@ -18,8 +19,8 @@ I am particularly enthusiastic about telecommunications and maritime technology,
 
 ## 🛠️ Skills
 ### **Technical Skills**
-- **Programming Languages:** Python, SQL, JavaScript
-- **Networking:** Network architecture, IT security
+- **Programming Languages:** Python, SQL, React
+- **Networking:** Network architecture, IT security, IT Orchestring
 - **Tools & Technologies:** DevOps, microcontrollers, data communication
 
 ### **Soft Skills**
@@ -76,16 +77,10 @@ I am particularly enthusiastic about telecommunications and maritime technology,
 
 ---
 
-## 📜 Certifications
-- [Add your certifications here, e.g., AWS Certified Solutions Architect, etc.]
-
----
-
 ## 📞 Contact
 - **Email:** [waelkattan2000@gmail.com](mailto:waelkattan2000@gmail.com)  
 - **Phone:** +47 96668427  
-- **LinkedIn:** [Your LinkedIn Profile](#)  
-- **GitHub:** [Your GitHub Profile](#)
+
 
 ---
 
