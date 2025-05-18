@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -16,9 +17,14 @@ const NotFound = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+        <Button
+              className="gap-2 hover:bg-transparent border-2 border-blue-700 hover:border-2 hover:border-blue-700"
+              size="lg"
+            >       
+        <a href="/wkn00" className="text-blue-500 hover:text-blue-700 underline">
           Return to Home
         </a>
+        </Button>
       </div>
     </div>
   );
