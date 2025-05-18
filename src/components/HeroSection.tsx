@@ -24,21 +24,51 @@ const HeroSection = () => {
             modern development practices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button
-              className="gap-2 hover:bg-transparent border-2 border-blue-700 hover:border-2 hover:border-blue-700"
-              size="lg"
-            >
-              <a href="#contact">Contact Me</a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://www.linkedin.com/in/waelkattan/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Linkedin
-              </a>
-            </Button>
+<Button
+  className="text-black hover:text-white hover:bg-transparent border-2 border-blue-500 hover:border-2 hover:border-blue-500"
+  size="lg"
+>
+  <a href="#contact" className="flex items-center">
+    Contact Me
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5 ml-2"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  </a>
+</Button>
+
+
+<Button
+  className="hover:text-black hover:bg-blue-500 border-2 border-blue-500 hover:border-2 hover:border-blue-500"
+  variant="outline"
+  size="lg"
+  asChild
+>
+  <a
+    href="https://www.linkedin.com/in/waelkattan/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-0"
+  >
+    Linked
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5 ml-0.5"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.866-3.061-1.868 0-2.154 1.46-2.154 2.969v5.696h-3v-10h2.881v1.367h.041c.401-.76 1.379-1.561 2.838-1.561 3.036 0 3.6 2 3.6 4.59v5.604z" />
+    </svg>
+  </a>
+</Button>
+
+
           </div>
         </div>
 
