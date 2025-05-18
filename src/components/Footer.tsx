@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h2 className="text-xl font-bold text-primary">John<span className="text-foreground">Doe</span></h2>
+            <h2 className="text-xl font-bold text-primary">Wael<span className="text-foreground">Kattan</span></h2>
             <p className="text-muted-foreground mt-1">Computer Engineer</p>
           </div>
           
@@ -28,7 +28,7 @@ const Footer = () => {
             </button>
             
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} John Doe. All rights reserved.
+              © {new Date().getFullYear()} Wael Kattan. All rights reserved.
             </p>
           </div>
         </div>

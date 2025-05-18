@@ -1,65 +1,56 @@
-
-import { Progress } from "@/components/ui/progress";
-
 const SkillsSection = () => {
   const technicalSkills = [
-    { name: "JavaScript", level: 90 },
-    { name: "TypeScript", level: 85 },
-    { name: "React", level: 90 },
-    { name: "Node.js", level: 80 },
-    { name: "Python", level: 75 },
-    { name: "SQL", level: 85 },
-    { name: "AWS", level: 70 },
-    { name: "Docker", level: 75 }
+    "Python",
+    "TypeScript",
+    "Node.js",
+    "SQL",
+    "MQTT",
+    "InfluxDB",
+    "Linux"
   ];
 
   const softSkills = [
     "Problem Solving",
-    "Team Leadership",
     "Communication",
-    "Project Management",
-    "Time Management",
-    "Agile Methodologies",
-    "Code Review",
-    "Mentoring"
+    "Technical Documentation",
+    "Customer Support",
+    "Collaboration",
+    "Attention to Detail",
+    "Self-learning",
+    "Process Improvement"
   ];
 
   const tools = [
     "Git",
     "VS Code",
-    "Jira",
-    "Figma",
-    "Postman",
-    "Jenkins",
+    "Docker Compose",
+    "Grafana",
+    "Telegraf",
+    "MQTT Broker",
+    "Azure App Service",
     "Kubernetes",
-    "MongoDB",
-    "PostgreSQL",
-    "Redis"
+    "CI/CD (GitHub Actions)",
+    "Postman"
   ];
 
   return (
     <section id="skills" className="py-16 md:py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
         <h2 className="section-title">Skills</h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-4">Technical Expertise</h3>
-            
-            <div className="space-y-4">
-              {technicalSkills.map((skill, index) => (
-                <div key={index} className="space-y-1">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                  </div>
-                  <Progress value={skill.level} className="h-2" />
-                </div>
-              ))}
-            </div>
-          </div>
-          
           <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.map((skill, index) => (
+                  <span key={index} className="skill-pill">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <div>
               <h3 className="text-xl font-semibold mb-4">Soft Skills</h3>
               <div className="flex flex-wrap gap-2">
@@ -70,7 +61,9 @@ const SkillsSection = () => {
                 ))}
               </div>
             </div>
-            
+          </div>
+
+          <div className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Tools & Technologies</h3>
               <div className="flex flex-wrap gap-2">

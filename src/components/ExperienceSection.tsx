@@ -4,38 +4,48 @@ import { Card, CardContent } from "@/components/ui/card";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
-      duration: "2022 - Present",
+      title: "IT Support",
+      company: "Power Norge",
+      duration: "Feb 2023 – Present",
       description: [
-        "Leading a team of 5 developers in building a microservices-based e-commerce platform",
-        "Architected and implemented CI/CD pipelines that reduced deployment time by 40%",
-        "Optimized database queries and application performance, resulting in 60% faster page loads",
-        "Mentored junior developers and conducted code reviews to ensure high code quality"
+        "Provided first-line technical support and troubleshooting for hardware and software issues",
+        "Installed, configured, and maintained IT equipment for internal users",
+        "Documented recurring issues and contributed to process improvement",
+        "Collaborated with internal teams to ensure stable daily operations"
       ]
     },
     {
-      title: "Software Developer",
-      company: "Digital Solutions Ltd.",
-      duration: "2019 - 2022",
+      title: "Software Development Intern",
+      company: "Power Grimstad & University of Agder",
+      duration: "May 2024 – Dec 2024",
       description: [
-        "Developed and maintained multiple web applications using React and Node.js",
-        "Implemented RESTful APIs and integrated third-party services",
-        "Reduced application bundle size by 30% through code splitting and lazy loading",
-        "Collaborated with UX designers to implement responsive and accessible interfaces"
+        "Designed and developed a desktop application to automate internal workflows",
+        "Led the full development cycle from requirements gathering to deployment",
+        "Worked cross-functionally with business and technical teams",
+        "Documented the project for handoff and future maintenance"
       ]
     },
     {
-      title: "Junior Developer",
-      company: "Web Creations Co.",
-      duration: "2017 - 2019",
+      title: "Interpreter",
+      company: "Tolkenett",
+      duration: "Oct 2022 – Present",
       description: [
-        "Assisted in the development of web applications using JavaScript and PHP",
-        "Created and maintained documentation for internal systems",
-        "Participated in daily stand-ups and sprint planning meetings",
-        "Debugged and fixed issues reported by users and QA team"
+        "Facilitated communication between clients and public services (e.g. NAV, healthcare, education)",
+        "Adapted quickly to sensitive or high-stakes scenarios requiring precision and neutrality",
+        "Managed scheduling and reporting independently in a freelance capacity"
+      ]
+    },
+    {
+      title: "Store Supervisor",
+      company: "KIWI",
+      duration: "Aug 2021 – Apr 2023",
+      description: [
+        "Responsible for opening and closing the store, cash handling, and shift leadership",
+        "Interacted with customers and ensured smooth daily operations",
+        "Followed operational routines and contributed to team performance"
       ]
     }
+
   ];
 
   return (

@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-1 flex items-center justify-between sm:items-stretch">
             <div className="flex-shrink-0 flex items-center">
-              <a href="#" className="text-xl font-bold text-primary">John<span className="text-foreground">Doe</span></a>
+              <a href="#" className="text-xl font-bold text-primary">Wael<span className="text-foreground">Kattan</span></a>
             </div>
             
             {/* Desktop menu */}
