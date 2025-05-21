@@ -55,7 +55,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-0"
               >
-                Linked
+                Linkedin
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-0.5"

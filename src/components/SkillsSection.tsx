@@ -3,7 +3,6 @@ const SkillsSection = () => {
     "Python",
     "TypeScript",
     "Node.js",
-    "SQL",
     "MQTT",
     "InfluxDB",
     "Linux"
@@ -28,9 +27,6 @@ const SkillsSection = () => {
     "Telegraf",
     "MQTT Broker",
     "Azure App Service",
-    "Kubernetes",
-    "CI/CD (GitHub Actions)",
-    "Postman"
   ];
 
   return (

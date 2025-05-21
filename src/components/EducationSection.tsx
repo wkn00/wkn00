@@ -9,6 +9,20 @@ const EducationSection = () => {
       description:
         "Specialization in networking and cybersecurity. Bachelor thesis with Telenor Maritime",
     },
+    {
+      degree: "Bachelor of Engineering in Computer Engineering",
+      institution: "University of Agder (UiA), Grimstad",
+      duration: "2021 - 2025",
+      description:
+        "Specialization in networking and cybersecurity. Bachelor thesis with Telenor Maritime",
+    },
+    {
+      degree: "Studiespesialisering (General Studies)",
+      institution: "Nadderud videregående skole, Bærum",
+      duration: "2016 - 2021",
+      description:
+        "Academic program focused on mathematics, natural sciences, and languages. Prepared for higher education with emphasis on analytical and theoretical subjects.",
+    },
   ];
 
   const certifications = [
@@ -22,7 +36,6 @@ const EducationSection = () => {
       issuer: "Microsoft",
       date: "Planned for 2026",
     },
-
   ];
 
   return (
