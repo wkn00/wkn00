@@ -19,10 +19,11 @@ const HeroSection = () => {
             Computer Engineer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Computer Engineering graduate with a focus on building reliable data
-            systems and cloud-native applications. Passionate about solving
-            real-world problems through clean architecture, automation, and
-            modern development practices.
+            Recent Computer Engineering graduate with interest in data systems,
+            cloud-native development, and network technologies. Focused on
+            building real-world skills through hands-on projects and continuous
+            learning. I value clean, practical solutions and enjoy solving
+            problems that connect systems and people.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button

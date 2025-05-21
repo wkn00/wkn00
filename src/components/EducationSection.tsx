@@ -20,12 +20,17 @@ const EducationSection = () => {
 
   const certifications = [
     {
-      name: "Currently studying for CompTia Security+ SY0-701",
+      name: "CompTIA Security+ (SY0-701)",
       issuer: "CompTIA Inc.",
       date: "In Progress",
     },
     {
-      name: "Preparing for Azure Fundamentals (AZ-900)",
+      name: "Cisco Certified Network Associate (CCNA)",
+      issuer: "Cisco",
+      date: "Planned for 2025",
+    },
+    {
+      name: "Azure Fundamentals (AZ-900)",
       issuer: "Microsoft",
       date: "Planned for 2026",
     },

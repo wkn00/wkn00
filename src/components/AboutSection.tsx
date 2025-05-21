@@ -10,7 +10,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 animate-slide-up">
             <p className="text-lg">
-              I'm a newly graduated Data Engineer with a specialization in
+              I'm a newly graduated Computer Engineer with a specialization in
               network and cybersecurity. I focus on building reliable, efficient
               systems using Python, TypeScript, and modern cloud tools.
             </p>
