@@ -16,10 +16,10 @@ const HeroSection = () => {
             Wael Kattan
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium text-primary">
-            Computer Engineer
+            Data Engineer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Recent Computer Engineering graduate with interest in data systems,
+            Recent Data Engineering graduate with interest in data systems,
             cloud-native development, and network technologies. Focused on
             building real-world skills through hands-on projects and continuous
             learning. I value clean, practical solutions and enjoy solving

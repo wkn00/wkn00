@@ -3,7 +3,7 @@ import { GraduationCap, Award, FileText } from "lucide-react";
 const EducationSection = () => {
   const education = [
     {
-      degree: "Bachelor of Engineering in Computer Engineering",
+      degree: "Bachelor of Engineering in Data Engineering",
       institution: "University of Agder (UiA), Grimstad",
       duration: "2021 - 2025",
       description:

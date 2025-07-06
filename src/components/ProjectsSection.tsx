@@ -12,7 +12,16 @@ import { ExternalLink, Github } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Guess My Number",
+      title: "Auto Rapport - Power",
+      description:
+        "A report generator for Power Norge automating the manual process and saving time for the company.",
+      tags: ["TypeScript", "React", "Azure", "Python"],
+      demoUrl: "https://powerauto.no/",
+      repoUrl: "https://i.postimg.cc/BvN4mwpc/autoexcel.gif",
+      imageUrl: "https://i.postimg.cc/xdhFjfpx/ar.png",
+    },
+    {
+      title: "Guess My Number - Hobby",
       description:
         "A two-player guessing game built with TypeScript and Node.js. Frontend hosted on GitHub Pages, backend API on Azure (Node.js). Players guess each other's secret 3-digit number with positional feedback.",
       tags: ["TypeScript", "Node.js", "React", "Azure", "GitHub Pages"],
@@ -21,7 +30,7 @@ const ProjectsSection = () => {
       imageUrl: "https://i.postimg.cc/CKyjKDqT/gsm-png.png",
     },
     {
-      title: "Kubernetes Infrastructure Deployment",
+      title: "Kubernetes Infrastructure Deployment - UiA",
       description:
         "University project focused on deploying and managing a Kubernetes-based infrastructure using Talos Linux, Kustomize, and GitOps practices. The stack includes CI/CD tools (ArgoCD), observability tools (Prometheus, Grafana, Loki), and containerized applications (Mastodon, Open Web UI).",
       tags: [
@@ -40,18 +49,9 @@ const ProjectsSection = () => {
       private: false,
     },
     {
-      title: "Intern Automation Tool – Power",
+      title: "Multi-Network Quality Monitoring System - Telenor",
       description:
-        "En desktop-applikasjon utviklet for å automatisere manuelle prosesser internt hos Power Norge. Løsningen effektiviserer oppgaver og forbedrer arbeidsflyten.",
-      tags: ["Python", "PyQt", "Qt", "Desktop App"],
-      demoUrl: null,
-      repoUrl: null,
-      imageUrl: "https://i.postimg.cc/s2DfWYNG/pngdasg.png",
-    },
-    {
-      title: "Multi-Network Quality Monitoring System",
-      description:
-        "Bachelorprosjekt utviklet for Telenor Maritime: et system for måling og logging av mobil- og WiFi-dekning i maritime miljøer. Kombinerer hardware og software for sanntidsmonitorering og analyse.",
+        "Bachelor project developed for Telenor Maritime: a system for measuring and logging mobile and WiFi coverage in maritime environments. Combines hardware and software for real-time monitoring and analysis.",
       tags: [
         "Raspberry Pi",
         "Python",
@@ -69,6 +69,25 @@ const ProjectsSection = () => {
       repoUrl: null, // privat
       imageUrl: "https://i.postimg.cc/9MdX6czZ/test4444.png",
       private: true,
+    },
+    {
+      title: "AutoTag – Power",
+      description:
+        "A desktop application developed to automate manual processes for storage used at Power Norge. The solution streamlines tasks and improves workflow.",
+      tags: ["Python", "PyQt", "Elguide"],
+      demoUrl: null,
+      repoUrl: null,
+      imageUrl: "https://i.postimg.cc/s2DfWYNG/pngdasg.png",
+    },
+
+    {
+      title: "AutoShoppa – Power",
+      description:
+        "A desktop application developed to automate manual processes for store used at Power Norge. The solution streamlines tasks and improves workflow.",
+      tags: ["Python", "PyQt", "Shoppa"],
+      demoUrl: null,
+      repoUrl: "https://github.com/wkn00/AutoShoppa",
+      imageUrl: "https://i.postimg.cc/fyGdqbCd/as.png",
     },
   ];
 
