@@ -2,4 +2,4 @@
 
 ## Project Info
 
-**Live URL**: [https://wkn00.github.io/wkn00/](https://wkn00.github.io/wkn00/)
+**Live URL**: [https://waelkattan.no/](https://waelkattan.no/)

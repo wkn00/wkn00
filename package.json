@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "homepage": "https://wkn00.github.io/wkn00",
+    "homepage": "https://waelkattan.no/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
