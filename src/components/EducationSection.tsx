@@ -29,25 +29,24 @@ const EducationSection = () => {
         "https://media.badgr.com/uploads/badges/assertion-paubQ3MsT-2PVTc-tERBCQ.png?versionId=Gj73EfSkN6cghr7FAxSThMLW1JZ8fyYI",
     },
     {
-      name: "CompTIA Security+ (SY0-701)",
-      issuer: "CompTIA Inc.",
-      date: "In Progress",
+      name: "Azure Fundamentals (AZ-900)",
+      issuer: "Microsoft",
+      date: "12.01.2026",
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/waelkattan/D8D6748001BDAA5C?sharingId=CD1723331A944650",
       badgeImage:
-        "https://www.lindenwood.edu/files/resources/xpace-comptia-security-training-02.png.pagespeed.ic.a3KQuv24WS.webp",
+        "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
+    },
+    {
+      name: "Azure Administrator Associate (AZ-104)",
+      issuer: "Microsoft",
+      date: "Planned for 2026",
+      badgeImage: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
     },
     {
       name: "Cisco Certified Network Associate (CCNA)",
       issuer: "Cisco",
-      date: "Planned for 2025",
-      badgeImage:
-        "https://freesvg.org/img/CCNA-Security-Logo.png",
-    },
-    {
-      name: "Azure Fundamentals (AZ-900)",
-      issuer: "Microsoft",
-      date: "Planned for 2026",
-      badgeImage:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fk21academy.com%2Fwp-content%2Fuploads%2F2020%2F02%2FAzure.Fundamental_Icon.png&f=1&nofb=1&ipt=9b0ab4ff5f81c58f8920687e3b7b7b2a53c2b87df769e0ac7bb1cf560db313b0",
+      date: "Planned for 2027",
+      badgeImage: "https://freesvg.org/img/CCNA-Security-Logo.png",
     },
   ];
 

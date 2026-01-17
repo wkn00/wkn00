@@ -82,7 +82,7 @@ const ContactSection = () => {
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Location",
-      value: "Grimstad, Norway",
+      value: "Drammen, Norway",
       href: "#",
     },
   ];

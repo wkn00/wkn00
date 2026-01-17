@@ -21,32 +21,27 @@ const SkillsSection = () => {
     languages: [
       { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
       { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
-      { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },
       { name: "C++", icon: <SiCplusplus className="text-[#00599C]" /> }
     ],
     frameworks: [
       { name: "Flask", icon: <SiFlask className="text-[#000000]" /> },
       { name: "Django", icon: <SiDjango className="text-[#092E20]" /> },
-      { name: ".NET", icon: <SiDotnet className="text-[#512BD4]" /> },
       { name: "React", icon: <FaReact className="text-[#61DAFB]" /> }
     ],
     databases: [
       { name: "InfluxDB", icon: <SiInfluxdb className="text-[#22ADF6]" /> },
-      { name: "NoSQL", icon: <div className="text-sm font-bold"></div> },
       { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
       { name: "PostgreSQL", icon: <SiPostgresql className="text-[#4169E1]" /> }
     ],
     libraries: [
       { name: "PyAutoGUI", icon: <FaPython className="text-[#3776AB]" /> },
       { name: "Pandas", icon: <SiPandas className="text-[#150458]" /> },
-      { name: "OpenCV", icon: <SiOpencv className="text-[#5C3EE8]" /> },
       { name: "PyQt", icon: <SiQt className="text-[#41CD52]" /> }
     ],
     tools: [
       { name: "GitHub", icon: <SiGithub className="text-[#181717]" /> },
       { name: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
       { name: "Azure", icon: <FaMicrosoft className="text-[#0078D4]" /> },
-      { name: "Heroku", icon: <SiHeroku className="text-[#430098]" /> }
     ]
   };
 

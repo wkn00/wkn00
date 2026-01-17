@@ -16,14 +16,13 @@ const HeroSection = () => {
             Wael Kattan
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium text-primary">
-            Data Engineer
+            Computer Engineer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Recent Data Engineering graduate with interest in data systems,
-            cloud-native development, and network technologies. Focused on
-            building real-world skills through hands-on projects and continuous
-            learning. I value clean, practical solutions and enjoy solving
-            problems that connect systems and people.
+            A 25-year-old Computer Engineering graduate, currently working as an
+            IT Consultant providing hands-on technical support. I have a strong
+            interest in building practical, reliable systems, and I enjoy
+            learning by solving real-world problems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button

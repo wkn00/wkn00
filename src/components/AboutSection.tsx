@@ -10,25 +10,39 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 animate-slide-up">
             <p className="text-lg">
-              I'm a newly graduated Data Engineer with a specialization in
-              network and cybersecurity. I focus on building reliable, efficient
-              systems using Python, TypeScript, and modern cloud tools.
+              I'm a 25-year-old Computer Engineer who has been building a career
+              in IT since graduating. For the past several months, I have been
+              working as an IT Consultant, a role I started in October 2025.
             </p>
             <p>
-              During my studies, I worked with Telenor Maritime on a real-world
-              project to measure and log mobile and WiFi coverage at sea. I
-              developed a full-stack solution using Flask, InfluxDB, MQTT, and
-              React, integrating both hardware and software components.
+              In my current position on the Service Desk (1st Line), I am the
+              first point of contact, answering phone calls and troubleshooting
+              a wide range of technical issues for users. This frontline role
+              has honed my problem-solving skills, patience, and ability to
+              communicate technical solutions clearly.
+            </p>
+            <p>
+              My engineering foundation is strong in networking and
+              cybersecurity. I focus on building reliable, efficient systems
+              using Python, TypeScript, and modern cloud tools.
+            </p>
+            <p>
+              During my studies, I collaborated with Telenor Maritime on a
+              real-world project to measure and log mobile and WiFi coverage at
+              sea. I developed a full-stack solution using Flask, InfluxDB,
+              MQTT, and React, integrating both hardware and software
+              components.
             </p>
             <p>
               I've also gained practical experience through an internship and
-              part-time work with Power as IT support, where I solved technical issues,
-              automated workflows, and handled direct customer interaction. 
+              part-time work with Power as IT support, where I solved complex
+              technical issues, automated workflows, and handled direct customer
+              interaction.
             </p>
             <p>
               I work well independently or in a team, I document what I build,
               and I care about building things that actually work. Outside of
-              tech, I’ve worked as a community interpreter and election worker,
+              tech, I've worked as a community interpreter and election worker,
               sharpening my communication skills and attention to detail.
             </p>
           </div>
