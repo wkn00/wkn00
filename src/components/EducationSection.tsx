@@ -37,7 +37,7 @@ const EducationSection = () => {
         "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
     },
     {
-      name: "Azure Administrator Associate (AZ-104)",
+      name: "Azure Developer Associate (AZ-204)",
       issuer: "Microsoft",
       date: "Planned for 2026",
       badgeImage: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
