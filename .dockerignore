@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.gitignore
+*.log
+npm-debug.log*
+.DS_Store
+.vscode
+.idea
+k8s
+README.md

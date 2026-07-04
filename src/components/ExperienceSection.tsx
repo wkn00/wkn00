@@ -66,12 +66,10 @@ const ExperienceSection = () => {
           {experiences.map((experience, index) => (
             <Card
               key={index}
-              className="border-none shadow-sm hover:shadow-md transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className="surface-card border-l-4 border-l-primary/70 hover:border-l-primary hover:shadow-lg hover:shadow-primary/5"
             >
               <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row md:items-start gap-4">
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="md:w-1/3">
                     <h3 className="text-xl font-semibold">
                       {experience.title}
@@ -79,15 +77,17 @@ const ExperienceSection = () => {
                     <p className="text-primary font-medium">
                       {experience.company}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mt-1">
                       {experience.duration}
                     </p>
                   </div>
 
                   <div className="md:w-2/3">
-                    <ul className="space-y-2 list-disc list-inside text-foreground">
+                    <ul className="space-y-2.5 text-muted-foreground">
                       {experience.description.map((point, i) => (
-                        <li key={i}>{point}</li>
+                        <li key={i} className="relative pl-5 before:absolute before:left-0 before:top-2.5 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary/70">
+                          {point}
+                        </li>
                       ))}
                     </ul>
                   </div>

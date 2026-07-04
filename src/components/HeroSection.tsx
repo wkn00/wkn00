@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -11,85 +12,74 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 py-24 md:py-32 relative">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Your content remains the same */}
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-            Wael Kattan
+          {/* Availability badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            Available for new opportunities
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+            Hi, I'm <span className="gradient-text">Wael Kattan</span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium text-primary">
-            Computer Engineer
+            Computer Engineer &amp; IT Consultant
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            A 25-year-old Computer Engineering graduate, currently working as an
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            A 26-year-old Computer Engineering graduate, currently working as an
             IT Consultant providing hands-on technical support. I have a strong
             interest in building practical, reliable systems, and I enjoy
             learning by solving real-world problems.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button
-              className="text-black hover:text-white hover:bg-transparent border-2 border-blue-500 hover:border-2 hover:border-blue-500"
-              size="lg"
-            >
-              <a href="#contact" className="flex items-center">
+            <Button size="lg" asChild>
+              <a href="#contact" className="flex items-center gap-2">
                 Contact Me
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
+                <Mail className="h-5 w-5" />
               </a>
             </Button>
 
-            <Button
-              className="hover:text-black hover:bg-blue-500 border-2 border-blue-500 hover:border-2 hover:border-blue-500"
-              variant="outline"
-              size="lg"
-              asChild
-            >
+            <Button variant="outline" size="lg" asChild>
               <a
                 href="https://www.linkedin.com/in/waelkattan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-0"
+                className="flex items-center gap-2"
               >
-                Linkedin
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-0.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.866-3.061-1.868 0-2.154 1.46-2.154 2.969v5.696h-3v-10h2.881v1.367h.041c.401-.76 1.379-1.561 2.838-1.561 3.036 0 3.6 2 3.6 4.59v5.604z" />
-                </svg>
+                <Linkedin className="h-5 w-5" />
+                LinkedIn
+              </a>
+            </Button>
+
+            <Button variant="ghost" size="lg" asChild>
+              <a
+                href="https://github.com/wkn00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Github className="h-5 w-5" />
+                GitHub
               </a>
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator - fixed positioning */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-        <div className="flex flex-col items-center">
-          <span className="text-muted-foreground text-sm mb-2">
-            Scroll to explore
-          </span>
-          <svg
-            className="w-6 h-6 text-primary"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+      {/* Scroll indicator */}
+      <a
+        href="#about"
+        aria-label="Scroll to about section"
+        className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce"
+      >
+        <div className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors">
+          <span className="text-sm mb-2">Scroll to explore</span>
+          <ArrowDown className="w-5 h-5" />
         </div>
-      </div>
+      </a>
     </section>
   );
 };

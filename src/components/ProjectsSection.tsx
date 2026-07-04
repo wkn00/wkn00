@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Lock } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -23,11 +23,11 @@ const ProjectsSection = () => {
     {
       title: "Guess My Number - Hobby",
       description:
-        "A two-player guessing game built with TypeScript and Node.js. Frontend hosted on GitHub Pages, backend API on Azure (Node.js). Players guess each other's secret 3-digit number with positional feedback.",
-      tags: ["TypeScript", "Node.js", "React", "Azure", "GitHub Pages"],
-      demoUrl: "https://wkn00.github.io/gsm",
+        "A real-time 1v1 code-breaking game built with TypeScript and Node.js. Players pick a secret 3-digit number and race to crack their opponent's with positional feedback. Fully self-hosted on my own Kubernetes (k3s) cluster and served through Cloudflare.",
+      tags: ["TypeScript", "Node.js", "React", "Kubernetes", "Cloudflare"],
+      demoUrl: "https://guess.elfaheem.com/",
       repoUrl: "https://github.com/wkn00/gsm",
-      imageUrl: "https://i.postimg.cc/CKyjKDqT/gsm-png.png",
+      imageUrl: "/images/guess-preview.png",
     },
     {
       title: "Kubernetes Infrastructure Deployment - UiA",
@@ -100,18 +100,30 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="project-card overflow-hidden h-full flex flex-col"
+              className="project-card group h-full flex flex-col"
             >
-              <div className="h-48 bg-secondary overflow-hidden">
+              <div className="relative h-48 bg-secondary overflow-hidden">
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60"></div>
+                {project.private && (
+                  <Badge
+                    variant="secondary"
+                    className="absolute top-3 right-3 gap-1 bg-background/80 backdrop-blur-sm"
+                  >
+                    <Lock size={12} /> Private
+                  </Badge>
+                )}
               </div>
 
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="group-hover:text-primary transition-colors">
+                  {project.title}
+                </CardTitle>
               </CardHeader>
 
               <CardContent className="flex-grow">
@@ -127,27 +139,36 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
 
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <Github size={16} /> Code
-                  </a>
-                </Button>
-                <Button size="sm" asChild>
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1"
-                  >
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
-                </Button>
+              <CardFooter className="flex flex-wrap gap-3">
+                {project.repoUrl && (
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5"
+                    >
+                      <Github size={16} /> Code
+                    </a>
+                  </Button>
+                )}
+                {project.demoUrl && (
+                  <Button size="sm" asChild>
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5"
+                    >
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  </Button>
+                )}
+                {!project.repoUrl && !project.demoUrl && (
+                  <span className="text-sm text-muted-foreground italic">
+                    Private project — source not publicly available
+                  </span>
+                )}
               </CardFooter>
             </Card>
           ))}

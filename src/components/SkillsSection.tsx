@@ -24,8 +24,8 @@ const SkillsSection = () => {
       { name: "C++", icon: <SiCplusplus className="text-[#00599C]" /> }
     ],
     frameworks: [
-      { name: "Flask", icon: <SiFlask className="text-[#000000]" /> },
-      { name: "Django", icon: <SiDjango className="text-[#092E20]" /> },
+      { name: "Flask", icon: <SiFlask className="text-white" /> },
+      { name: "Django", icon: <SiDjango className="text-[#44B78B]" /> },
       { name: "React", icon: <FaReact className="text-[#61DAFB]" /> }
     ],
     databases: [
@@ -35,11 +35,11 @@ const SkillsSection = () => {
     ],
     libraries: [
       { name: "PyAutoGUI", icon: <FaPython className="text-[#3776AB]" /> },
-      { name: "Pandas", icon: <SiPandas className="text-[#150458]" /> },
+      { name: "Pandas", icon: <SiPandas className="text-[#E70488]" /> },
       { name: "PyQt", icon: <SiQt className="text-[#41CD52]" /> }
     ],
     tools: [
-      { name: "GitHub", icon: <SiGithub className="text-[#181717]" /> },
+      { name: "GitHub", icon: <SiGithub className="text-white" /> },
       { name: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
       { name: "Azure", icon: <FaMicrosoft className="text-[#0078D4]" /> },
     ]
@@ -109,11 +109,11 @@ const SkillsSection = () => {
                     : 'flex-wrap'}
                 `}>
                   {items.map((item, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`
-                        flex items-center gap-1.5 px-3 py-1.5 bg-white/10 rounded-full 
-                        group transition-all hover:bg-white/20
+                        flex items-center gap-1.5 px-3 py-1.5 bg-secondary/60 border border-border/60 rounded-full
+                        group transition-all hover:border-primary/40 hover:bg-secondary
                         ${['languages', 'databases'].includes(category) ? 'flex-shrink-0' : ''}
                       `}
                       title={item.name}
@@ -166,7 +166,7 @@ const SkillsSection = () => {
           </div>
 
           {/* Courses Column 2 */}
-          <div className="space-y-6 pt-10 md:pt-0 mt-12">
+          <div className="space-y-6 md:mt-14">
             <div className="mb-5">
               <h4 className="text-md font-medium mb-2 text-primary">Networking</h4>
               <ul className="space-y-1.5">

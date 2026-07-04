@@ -208,7 +208,10 @@ const ContactSection = () => {
               <div className="flex gap-4">
                 <a
                   href="https://github.com/wkn00"
-                  className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="p-3 rounded-full bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="h-5 w-5"
@@ -225,7 +228,10 @@ const ContactSection = () => {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/waelkattan/"
-                  className="p-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  className="p-3 rounded-full bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="h-5 w-5"

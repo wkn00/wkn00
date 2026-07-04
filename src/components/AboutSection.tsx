@@ -10,7 +10,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 animate-slide-up">
             <p className="text-lg">
-              I'm a 25-year-old Computer Engineer who has been building a career
+              I'm a 26-year-old Computer Engineer who has been building a career
               in IT since graduating. For the past several months, I have been
               working as an IT Consultant, a role I started in October 2025.
             </p>
@@ -48,9 +48,9 @@ const AboutSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="border shadow-sm bg-card/50 backdrop-blur-sm hover:shadow-md transition-all">
+            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
               <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <User size={24} />
                 </div>
                 <h3 className="font-medium text-lg">Front-end Development</h3>
@@ -61,9 +61,9 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm bg-card/50 backdrop-blur-sm hover:shadow-md transition-all">
+            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
               <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <Code size={24} />
                 </div>
                 <h3 className="font-medium text-lg">Back-end Systems</h3>
@@ -73,9 +73,9 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm bg-card/50 backdrop-blur-sm hover:shadow-md transition-all">
+            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
               <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <Server size={24} />
                 </div>
                 <h3 className="font-medium text-lg">Cloud Services</h3>
@@ -86,9 +86,9 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm bg-card/50 backdrop-blur-sm hover:shadow-md transition-all">
+            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
               <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
                   <Database size={24} />
                 </div>
                 <h3 className="font-medium text-lg">Database Design</h3>

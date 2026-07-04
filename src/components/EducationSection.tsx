@@ -37,16 +37,10 @@ const EducationSection = () => {
         "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
     },
     {
-      name: "Azure Developer Associate (AZ-204)",
+      name: "Azure Administrator Associate (AZ-104)",
       issuer: "Microsoft",
       date: "Planned for 2026",
       badgeImage: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-    },
-    {
-      name: "Cisco Certified Network Associate (CCNA)",
-      issuer: "Cisco",
-      date: "Planned for 2027",
-      badgeImage: "https://freesvg.org/img/CCNA-Security-Logo.png",
     },
   ];
 
@@ -94,9 +88,9 @@ const EducationSection = () => {
                 <div
                   key={index}
                   onClick={() => handleCertificateClick(cert.link)}
-                  className={`relative flex items-start gap-4 p-4 border rounded-lg transition-all duration-300 group ${
+                  className={`surface-card relative flex items-start gap-4 p-4 group ${
                     cert.link
-                      ? "cursor-pointer hover:shadow-lg hover:-translate-y-1"
+                      ? "cursor-pointer hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
                       : ""
                   }`}
                 >
