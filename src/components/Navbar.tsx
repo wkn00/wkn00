@@ -16,10 +16,15 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      const doc = document.documentElement;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      setScrollProgress(Math.min(1, window.scrollY / max));
 
       // Scroll-spy: highlight the section currently in view
       const offset = 120;
@@ -83,6 +88,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll progress indicator */}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary via-sky-400 to-violet-500 transition-[width] duration-150 ease-out"
+        style={{ width: `${scrollProgress * 100}%` }}
+        aria-hidden="true"
+      />
 
       {/* Mobile menu */}
       <div className={cn(
