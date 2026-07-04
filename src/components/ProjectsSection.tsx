@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Lock } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -28,6 +28,7 @@ const ProjectsSection = () => {
       demoUrl: "https://guess.elfaheem.com/",
       repoUrl: "https://github.com/wkn00/gsm",
       imageUrl: "/images/guess-preview.png",
+      showLiveDemo: true,
     },
     {
       title: "Kubernetes Infrastructure Deployment - UiA",
@@ -139,20 +140,8 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
 
-              <CardFooter className="flex flex-wrap gap-3">
-                {project.repoUrl && (
-                  <Button variant="outline" size="sm" asChild>
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5"
-                    >
-                      <Github size={16} /> Code
-                    </a>
-                  </Button>
-                )}
-                {project.demoUrl && (
+              {project.showLiveDemo && project.demoUrl && (
+                <CardFooter>
                   <Button size="sm" asChild>
                     <a
                       href={project.demoUrl}
@@ -163,13 +152,8 @@ const ProjectsSection = () => {
                       <ExternalLink size={16} /> Live Demo
                     </a>
                   </Button>
-                )}
-                {!project.repoUrl && !project.demoUrl && (
-                  <span className="text-sm text-muted-foreground italic">
-                    Private project — source not publicly available
-                  </span>
-                )}
-              </CardFooter>
+                </CardFooter>
+              )}
             </Card>
           ))}
         </div>
