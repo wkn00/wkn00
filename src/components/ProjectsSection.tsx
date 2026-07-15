@@ -17,8 +17,8 @@ const ProjectsSection = () => {
         "A report generator for Power Norge automating the manual process and saving time for the company.",
       tags: ["TypeScript", "React", "Azure", "Python"],
       demoUrl: "https://powerauto.no/",
-      repoUrl: "https://i.postimg.cc/BvN4mwpc/autoexcel.gif",
-      imageUrl: "https://i.postimg.cc/xdhFjfpx/ar.png",
+      repoUrl: "/images/autoexcel.gif",
+      imageUrl: "/images/ar.png",
     },
     {
       title: "Guess My Number - Hobby",
@@ -46,7 +46,7 @@ const ProjectsSection = () => {
       ],
       demoUrl: null, // No live demo
       repoUrl: "https://github.com/wkn00/skyinfrastruktur-final",
-      imageUrl: "https://i.postimg.cc/kMfs8n6D/test5.png",
+      imageUrl: "/images/k8s-uia.png",
       private: false,
     },
     {
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
       ],
       demoUrl: null, // privat
       repoUrl: null, // privat
-      imageUrl: "https://i.postimg.cc/9MdX6czZ/test4444.png",
+      imageUrl: "/images/telenor.png",
       private: true,
     },
     {
@@ -78,7 +78,7 @@ const ProjectsSection = () => {
       tags: ["Python", "PyQt", "Elguide"],
       demoUrl: null,
       repoUrl: null,
-      imageUrl: "https://i.postimg.cc/s2DfWYNG/pngdasg.png",
+      imageUrl: "/images/autotag.png",
     },
 
     {
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
       tags: ["Python", "PyQt", "Shoppa"],
       demoUrl: null,
       repoUrl: "https://github.com/wkn00/AutoShoppa",
-      imageUrl: "https://i.postimg.cc/fyGdqbCd/as.png",
+      imageUrl: "/images/autoshoppa.png",
     },
   ];
 
