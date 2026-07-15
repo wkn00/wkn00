@@ -24,7 +24,7 @@ spec:
         - name: ghcr-creds
       containers:
         - name: nginx
-          image: ghcr.io/wkn00/wael-portfolio:1.1.0
+          image: ghcr.io/wkn00/wael-portfolio:1.2.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
