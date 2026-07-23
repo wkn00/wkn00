@@ -12,15 +12,6 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 py-24 md:py-32 relative">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Availability badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
-            </span>
-            Available for new opportunities
-          </div>
-
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
             Hi, I'm <span className="gradient-text">Wael Kattan</span>
           </h1>
@@ -54,7 +45,7 @@ const HeroSection = () => {
               </a>
             </Button>
 
-            <Button variant="ghost" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild>
               <a
                 href="https://github.com/wkn00"
                 target="_blank"
