@@ -22,9 +22,30 @@ spec:
     spec:
       imagePullSecrets:
         - name: ghcr-creds
+      affinity:
+        # Keep the control plane (wk) free: land on the workers whenever
+        # they can take the pod, but stay schedulable if they cannot.
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              preference:
+                matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values: ["wk1", "wk2"]
+        # One replica per node, so a single worker going down never takes
+        # the whole site with it.
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchLabels:
+                    app: wael-frontend
       containers:
         - name: nginx
-          image: ghcr.io/wkn00/wael-portfolio:1.2.0
+          image: ghcr.io/wkn00/wael-portfolio:1.4.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
