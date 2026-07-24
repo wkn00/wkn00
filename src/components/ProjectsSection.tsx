@@ -14,19 +14,46 @@ import {
 } from "@/components/ui/tooltip";
 import { ExternalLink, Github, Lock } from "lucide-react";
 
+/* Imported rather than referenced from /public: Vite content-hashes the
+   filename, so replacing the shot busts every CDN cache by itself. Files in
+   public/ keep their name and go on being served stale from the edge. */
+import prisetCover from "@/assets/priset-card.jpg";
+
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Auto Rapport - Power",
+      title: "Priset - Hobby",
       description:
-        "A report generator for Power Norge automating the manual process and saving time for the company.",
-      tags: ["TypeScript", "React", "Azure", "Python"],
-      demoUrl: null, // privat
-      repoUrl: null, // privat
-      imageUrl: "/images/ar.png",
+        "A daily car price-guessing game for a Norwegian audience, in the Wordle mould. Three cars a day, pulled from finn.no listings by a scraper that runs on its own schedule. The player sees only the photo and names a price; every guess comes back with a colour tier and an arrow, and unlocks one more fact about the car — make, model, power, mileage, year — until the price is within two percent. Norwegian throughout, with a FastAPI backend and CronJobs that assign the day's cars and keep the pool topped up, running on my own Kubernetes (k3s) cluster behind Cloudflare.",
+      tags: [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "Kubernetes",
+        "Cloudflare",
+      ],
+      demoUrl: "https://priset.elfaheem.com/",
+      repoUrl: null,
+      imageUrl: prisetCover,
+      fit: "contain",
+      showLiveDemo: true,
     },
     {
-      title: "GradeLoop - Hobby",
+      title: "Guess My Number - Hobby",
+      description:
+        "A real-time 1v1 code-breaking game built with TypeScript and Node.js. Players pick a secret 3-digit number and race to crack their opponent's with positional feedback. Fully self-hosted on my own Kubernetes (k3s) cluster and served through Cloudflare.",
+      tags: ["TypeScript", "Node.js", "React", "Kubernetes", "Cloudflare"],
+      demoUrl: "https://guess.elfaheem.com/",
+      repoUrl: "https://github.com/wkn00/gsm",
+      imageUrl: "/images/guess-preview.png",
+      fit: "contain",
+      showLiveDemo: true,
+    },
+    {
+      title: "GradeLoop",
       description:
         "A self-hosted classroom app. A teacher opens a session with a rubric and a word-count range; students join with a five-digit code and write straight in the browser, with no account at all. Submissions land live on the teacher's screen, and the whole class is graded against the rubric in one pass using the Claude API. Ships in Norwegian and English, and runs on my own Kubernetes (k3s) cluster behind Cloudflare.",
       tags: [
@@ -42,17 +69,17 @@ const ProjectsSection = () => {
       demoUrl: "https://grade.elfaheem.com/",
       repoUrl: null,
       imageUrl: "/images/gradeloop.png",
+      fit: "contain",
       showLiveDemo: true,
     },
     {
-      title: "Guess My Number - Hobby",
+      title: "Auto Rapport - Power",
       description:
-        "A real-time 1v1 code-breaking game built with TypeScript and Node.js. Players pick a secret 3-digit number and race to crack their opponent's with positional feedback. Fully self-hosted on my own Kubernetes (k3s) cluster and served through Cloudflare.",
-      tags: ["TypeScript", "Node.js", "React", "Kubernetes", "Cloudflare"],
-      demoUrl: "https://guess.elfaheem.com/",
-      repoUrl: "https://github.com/wkn00/gsm",
-      imageUrl: "/images/guess-preview.png",
-      showLiveDemo: true,
+        "A report generator for Power Norge automating the manual process and saving time for the company.",
+      tags: ["TypeScript", "React", "Azure", "Python"],
+      demoUrl: null, // privat
+      repoUrl: null, // privat
+      imageUrl: "/images/ar.png",
     },
     {
       title: "Kubernetes Infrastructure Deployment - UiA",
@@ -104,7 +131,6 @@ const ProjectsSection = () => {
       repoUrl: null,
       imageUrl: "/images/autotag.png",
     },
-
     {
       title: "AutoShoppa – Power",
       description:
@@ -132,11 +158,30 @@ const ProjectsSection = () => {
                 className="project-card group h-full flex flex-col"
               >
                 <div className="relative h-48 bg-secondary overflow-hidden">
+                  {/* Fills the letterbox a contained screenshot leaves behind:
+                      a zoomed, blurred copy of the shot itself, so the frame is
+                      always full and the colours always belong to the image. */}
+                  {project.fit === "contain" && (
+                    <img
+                      src={project.imageUrl}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-70"
+                    />
+                  )}
                   <img
                     src={project.imageUrl}
                     alt={project.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`relative w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                      /* App screenshots are shown whole — cropping them to the
+                         card's letterbox cuts the very UI they exist to show.
+                         Photos and diagrams still fill the frame. */
+                      project.fit === "contain"
+                        ? "object-contain p-2"
+                        : "object-cover"
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60"></div>
                   {project.private && (
