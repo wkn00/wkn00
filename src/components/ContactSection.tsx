@@ -70,8 +70,8 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-5 w-5 text-primary" />,
       title: "Email",
-      value: "waelkattan2000@gmail.com",
-      href: "mailto:waelkattan2000@gmail.com",
+      value: "kattan.wa@gmail.com",
+      href: "mailto:kattan.wa@gmail.com",
     },
     {
       icon: <Phone className="h-5 w-5 text-primary" />,
