@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: 'About', href: '#about' },
+  { name: 'Certifications', href: '#certifications' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
@@ -57,7 +58,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop menu */}
-          <div className="hidden sm:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -75,7 +76,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center sm:hidden">
+          <div className="flex items-center lg:hidden">
             <Button
               variant="ghost"
               size="icon"
@@ -98,7 +99,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div className={cn(
-        "sm:hidden bg-background/95 backdrop-blur-md border-t border-border/60 overflow-hidden transition-all duration-300",
+        "lg:hidden bg-background/95 backdrop-blur-md border-t border-border/60 overflow-hidden transition-all duration-300",
         mobileMenuOpen ? "max-h-96" : "max-h-0"
       )}>
         <div className="px-2 pt-2 pb-3 space-y-1">

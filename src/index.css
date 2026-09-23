@@ -157,4 +157,44 @@
   .project-card {
     @apply bg-card/70 border border-border/70 rounded-xl overflow-hidden backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5;
   }
+
+  /* Faint blueprint grid behind project previews and diagrams */
+  .preview-grid {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.045) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Marching dashes along a diagram edge, pointing the way data flows */
+  .flow-edge {
+    stroke-dasharray: 5 7;
+    animation: flow-dash 1.2s linear infinite;
+  }
+
+  /* Fills one step of a preview's progress bar over one cycle (CYCLE_MS) */
+  .animate-progress {
+    animation: progress-fill 2.4s linear forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-edge {
+      animation: none;
+    }
+  }
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }

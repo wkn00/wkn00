@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
+import { ArrowDown, ArrowRight, Mail, Linkedin, Github } from "lucide-react";
+import fundamentalsBadge from "@/assets/certs/ms-fundamentals.svg";
+import associateBadge from "@/assets/certs/ms-associate.svg";
 
 const HeroSection = () => {
   return (
@@ -12,6 +14,32 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 py-24 md:py-32 relative">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Headline credential, first thing on the page; the full path is
+              in the Certifications section it links to. */}
+          <a
+            href="#certifications"
+            className="group inline-flex items-center gap-3 rounded-full border border-primary/30 bg-card/60 py-1.5 pl-1.5 pr-4 text-sm shadow-lg shadow-primary/10 backdrop-blur-sm transition-colors hover:border-primary/60 hover:bg-card/80"
+          >
+            <span className="flex -space-x-2">
+              <img
+                src={fundamentalsBadge}
+                alt=""
+                className="h-8 w-8 rounded-full bg-background ring-2 ring-background"
+              />
+              <img
+                src={associateBadge}
+                alt=""
+                className="h-8 w-8 rounded-full bg-background ring-2 ring-background transition-transform group-hover:scale-110"
+              />
+            </span>
+            <span className="text-muted-foreground">
+              <span className="font-semibold text-foreground">Microsoft Certified</span>
+              <span className="hidden sm:inline"> · Azure Administrator Associate</span>
+              <span className="sm:hidden"> · AZ-104</span>
+            </span>
+            <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" />
+          </a>
+
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
             Hi, I'm <span className="gradient-text">Wael Kattan</span>
           </h1>

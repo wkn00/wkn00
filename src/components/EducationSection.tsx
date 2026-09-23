@@ -1,4 +1,4 @@
-import { GraduationCap, Award, FileText } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 const EducationSection = () => {
   const education = [
@@ -18,111 +18,30 @@ const EducationSection = () => {
     },
   ];
 
-  const certifications = [
-    {
-      name: "Postman API Fundamentals Student Expert",
-      issuer: "Postman",
-      date: "22.05.2025",
-      link: "https://api.badgr.io/public/assertions/paubQ3MsT-2PVTc-tERBCQ?identity__email=qatanwail%40gmail.com",
-
-      badgeImage:
-        "https://media.badgr.com/uploads/badges/assertion-paubQ3MsT-2PVTc-tERBCQ.png?versionId=Gj73EfSkN6cghr7FAxSThMLW1JZ8fyYI",
-    },
-    {
-      name: "Azure Fundamentals (AZ-900)",
-      issuer: "Microsoft",
-      date: "12.01.2026",
-      link: "https://learn.microsoft.com/api/credentials/share/en-us/waelkattan/D8D6748001BDAA5C?sharingId=CD1723331A944650",
-      badgeImage:
-        "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
-    },
-    {
-      name: "Azure Administrator Associate (AZ-104)",
-      issuer: "Microsoft",
-      date: "Planned for 2026",
-      badgeImage: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-    },
-  ];
-
-  const handleCertificateClick = (link) => {
-    if (link) {
-      window.open(link, "_blank");
-    }
-  };
-
+  /* Certifications have their own section (CertificationsSection) near the
+     top of the page, so they aren't buried down here. */
   return (
     <section id="education" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Education & Certifications</h2>
+        <h2 className="section-title">Education</h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
-              <GraduationCap className="h-5 w-5 text-primary" />
-              Education
-            </h3>
-
-            <div className="space-y-8">
-              {education.map((item, index) => (
-                <div key={index} className="timeline-item">
-                  <span className="timeline-dot"></span>
-                  <h4 className="font-semibold">{item.degree}</h4>
-                  <p className="text-primary">{item.institution}</p>
-                  <p className="timeline-date">{item.duration}</p>
-                  <p className="text-muted-foreground mt-2">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+        <div className="grid gap-6 md:grid-cols-2">
+          {education.map((item, index) => (
+            <div
+              key={index}
+              className="surface-card group flex gap-4 p-6 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+            >
+              <div className="h-fit rounded-full bg-primary/10 p-3 text-primary transition-transform group-hover:scale-110">
+                <GraduationCap className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="font-semibold">{item.degree}</h3>
+                <p className="text-primary">{item.institution}</p>
+                <p className="timeline-date">{item.duration}</p>
+                <p className="text-muted-foreground mt-2">{item.description}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="space-y-8">
-            <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
-              <Award className="h-5 w-5 text-primary" />
-              Certifications
-            </h3>
-
-            <div className="space-y-6">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleCertificateClick(cert.link)}
-                  className={`surface-card relative flex items-start gap-4 p-4 group ${
-                    cert.link
-                      ? "cursor-pointer hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-                      : ""
-                  }`}
-                >
-                  <FileText className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <h4 className="font-medium">{cert.name}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {cert.issuer} • {cert.date}
-                    </p>
-                  </div>
-
-                  {cert.badgeImage && (
-                    <div
-                      className={`absolute right-4 top-1/2 -translate-y-1/2 ${
-                        cert.link
-                          ? "opacity-50 group-hover:opacity-100"
-                          : "opacity-50"
-                      } transition-opacity duration-300`}
-                    >
-                      <div className="w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center overflow-hidden shadow-md">
-                        <img
-                          src={cert.badgeImage}
-                          alt={`${cert.name} badge`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

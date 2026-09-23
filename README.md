@@ -2,10 +2,12 @@
 
 Personal portfolio and résumé site, live at **[waelkattan.no](https://waelkattan.no/)**.
 
-A single-page site (hero → about → skills → experience → education →
-projects → contact) with a hidden `/SecretRoom` easter egg route. The
-Projects section links out to the other apps in this body of work
-(carpet-house games, trivia, price-guessing, classroom tools, and more).
+A single-page site (hero → about → certifications → experience →
+projects → skills → education → contact) with a hidden `/secret-room`
+easter egg route. The Projects section links out to the other apps in this
+body of work (carpet-house games, trivia, price-guessing, classroom tools,
+and more); each card has an interactive preview, a full-size viewer, and —
+for the deployed apps — a "Try it live" tab that embeds the running app.
 
 ## Tech stack
 
@@ -25,15 +27,19 @@ src/
 ├── components/
 │   ├── HeroSection.tsx
 │   ├── AboutSection.tsx
+│   ├── CertificationsSection.tsx   # Azure path stepper + credential cards
 │   ├── SkillsSection.tsx
 │   ├── ExperienceSection.tsx
 │   ├── EducationSection.tsx
-│   ├── ProjectsSection.tsx
+│   ├── ProjectsSection.tsx         # project data (shots, captions, links)
+│   ├── projects/                   # ProjectPreview (card media), ProjectViewer
+│   │                               # (lightbox + live embed), FlowDiagram
 │   ├── ContactSection.tsx
 │   ├── Navbar.tsx / Footer.tsx / ParticleBackground.tsx
 │   └── ui/                # shadcn/ui components
 ├── hooks/, lib/           # shared hooks and utilities
-└── assets/                # static media
+└── assets/                # imported (content-hashed) media:
+                           # projects/ screenshots + demo video, certs/ badges
 
 k8s/            # namespace.yaml, deployment.yaml (k3s deployment)
 Dockerfile      # multi-stage: node:22-alpine build -> nginx:1.27-alpine runtime
