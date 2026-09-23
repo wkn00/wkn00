@@ -1,6 +1,6 @@
 # Wael Kattan — Portfolio
 
-Personal portfolio and résumé site, live at **[waelkattan.no](https://waelkattan.no/)**.
+Personal portfolio and résumé site, live at **[wael.elfaheem.com](https://wael.elfaheem.com/)**.
 
 A single-page site (hero → about → certifications → experience →
 projects → education & coursework → contact) with a hidden `/secret-room`
@@ -72,15 +72,20 @@ npm run lint         # eslint
 
 ## Deployment
 
-Two independent deployment paths exist:
+The site runs on a k3s cluster: `Dockerfile` builds a static bundle and
+serves it with nginx, and `k8s/namespace.yaml` + `k8s/deployment.yaml`
+deploy it (exposed the same way as the rest of the app family, via
+Cloudflare Tunnel to a Service).
 
-1. **GitHub Pages** — `npm run deploy` builds and pushes `dist/` via
-   `gh-pages` (`homepage` is set to `https://waelkattan.no/` in
-   `package.json`).
-2. **Containerized (k3s)** — `Dockerfile` builds a static bundle and serves
-   it with nginx; `k8s/namespace.yaml` + `k8s/deployment.yaml` deploy it to
-   the cluster (exposed the same way as the rest of the app family, via
-   Cloudflare Tunnel to a Service).
+To ship a change:
+
+```bash
+# bump the image tag in k8s/deployment.yaml, then:
+docker build -t ghcr.io/wkn00/wael-portfolio:<tag> .
+docker push ghcr.io/wkn00/wael-portfolio:<tag>
+kubectl apply -f k8s/deployment.yaml
+kubectl -n wael rollout status deploy/wael-frontend
+```
 
 ## License
 
