@@ -45,7 +45,7 @@ spec:
                     app: wael-frontend
       containers:
         - name: nginx
-          image: ghcr.io/wkn00/wael-portfolio:1.8.0
+          image: ghcr.io/wkn00/wael-portfolio:1.8.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

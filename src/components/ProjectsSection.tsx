@@ -90,7 +90,7 @@ const projects: Project[] = [
       "A real-time 1v1 code-breaking game built with TypeScript and Node.js. Players pick a secret 3-digit number and race to crack their opponent's with positional feedback. Fully self-hosted on my own Kubernetes (k3s) cluster and served through Cloudflare.",
     tags: ["TypeScript", "Node.js", "React", "Kubernetes", "Cloudflare"],
     demoUrl: "https://guess.elfaheem.com/",
-    repoUrl: "https://github.com/wkn00/gsm",
+    repoUrl: null, // privat
     preview: {
       frame: "browser",
       label: "guess.elfaheem.com",
