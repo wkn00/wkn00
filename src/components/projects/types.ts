@@ -27,6 +27,8 @@ export type Preview = {
 };
 
 export type Project = {
+  /* Anchor id for linking straight to the card from elsewhere on the page. */
+  id?: string;
   title: string;
   description: string;
   tags: string[];

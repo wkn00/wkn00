@@ -159,6 +159,7 @@ const projects: Project[] = [
     },
   },
   {
+    id: "project-k8s",
     title: "Kubernetes Infrastructure Deployment - UiA",
     description:
       "University project focused on deploying and managing a Kubernetes-based infrastructure using Talos Linux, Kustomize, and GitOps practices. The stack includes CI/CD tools (ArgoCD), observability tools (Prometheus, Grafana, Loki), and containerized applications (Mastodon, Open Web UI).",
@@ -187,6 +188,7 @@ const projects: Project[] = [
     },
   },
   {
+    id: "project-telenor",
     title: "Multi-Network Quality Monitoring System - Telenor",
     description:
       "Bachelor project developed for Telenor Maritime: a system for measuring and logging mobile and WiFi coverage in maritime environments. Combines hardware and software for real-time monitoring and analysis.",
@@ -284,6 +286,7 @@ const ProjectsSection = () => {
             return (
               <Card
                 key={project.title}
+                id={project.id}
                 className="project-card group h-full flex flex-col"
               >
                 <ProjectPreview

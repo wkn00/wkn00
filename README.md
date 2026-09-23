@@ -3,7 +3,7 @@
 Personal portfolio and résumé site, live at **[waelkattan.no](https://waelkattan.no/)**.
 
 A single-page site (hero → about → certifications → experience →
-projects → skills → education → contact) with a hidden `/secret-room`
+projects → education & coursework → contact) with a hidden `/secret-room`
 easter egg route. The Projects section links out to the other apps in this
 body of work (carpet-house games, trivia, price-guessing, classroom tools,
 and more); each card has an interactive preview, a full-size viewer, and —
@@ -28,9 +28,9 @@ src/
 │   ├── HeroSection.tsx
 │   ├── AboutSection.tsx
 │   ├── CertificationsSection.tsx   # Azure path stepper + credential cards
-│   ├── SkillsSection.tsx
 │   ├── ExperienceSection.tsx
-│   ├── EducationSection.tsx
+│   ├── EducationSection.tsx        # degree timeline + coursework
+│   ├── education/                  # course data and the coursework breakdown
 │   ├── ProjectsSection.tsx         # project data (shots, captions, links)
 │   ├── projects/                   # ProjectPreview (card media), ProjectViewer
 │   │                               # (lightbox + live embed), FlowDiagram
