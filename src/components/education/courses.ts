@@ -97,7 +97,7 @@ export const courseAreas: CourseArea[] = [
     icon: Briefcase,
     color: "var(--series-6)",
     courses: [
-      { name: "Internship", link: { label: "Power", href: "#experience" } },
+      { name: "Internship", link: { label: "Power", href: "#exp-power-intern" } },
       { name: "Technology & Environment" },
       { name: "Health, Safety & Environment" },
     ],

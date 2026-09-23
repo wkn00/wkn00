@@ -73,7 +73,7 @@ const stages: Stage[] = [
         kicker: "Internship · Power & UiA",
         title: "Software development intern",
         text: "Built a desktop application that automates internal workflows, from requirements to deployment.",
-        href: "#experience",
+        href: "#exp-power-intern",
         cta: "See experience",
       },
     ],

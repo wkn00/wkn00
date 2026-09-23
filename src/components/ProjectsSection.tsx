@@ -228,6 +228,7 @@ const projects: Project[] = [
     },
   },
   {
+    id: "project-autotag",
     title: "AutoTag – Power",
     description:
       "A desktop application developed to automate manual processes for storage used at Power Norge. The solution streamlines tasks and improves workflow.",

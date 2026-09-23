@@ -1,5 +1,43 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { User, Code, Server, Database } from "lucide-react";
+import { ArrowRight, Check, Cloud, Target } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+/* What the cloud goal already rests on, and what's next. Each step links to
+   the section that backs it up. */
+const groundwork = [
+  {
+    done: true,
+    text: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+    href: "#certifications",
+  },
+  {
+    done: true,
+    text: "My own 7-node k3s cluster (3 control-plane nodes) behind Cloudflare, running this site and three live apps",
+    href: "#projects",
+  },
+  {
+    done: true,
+    text: "GitOps on Kubernetes at UiA: Talos Linux, Argo CD, Prometheus, Grafana, Loki",
+    href: "#project-k8s",
+  },
+  {
+    done: false,
+    text: "Next: Azure Solutions Architect Expert (AZ-305), planned for 2027",
+    href: "#certifications",
+  },
+];
+
+const cloudStack = [
+  "Azure",
+  "Kubernetes",
+  "k3s",
+  "Docker",
+  "Argo CD",
+  "Kustomize",
+  "Cloudflare",
+  "Prometheus",
+  "Grafana",
+  "Linux",
+];
 
 const AboutSection = () => {
   return (
@@ -7,96 +45,96 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title">About Me</h2>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4 animate-slide-up">
-            <p className="text-lg">
-              I'm a 26-year-old Computer Engineer who has been building a career
-              in IT since graduating. For the past several months, I have been
-              working as an IT Consultant, a role I started in October 2025.
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
+          <div className="space-y-5 text-lg animate-slide-up">
+            <p className="text-2xl font-semibold leading-snug tracking-tight text-foreground md:text-3xl">
+              I'm a computer engineer working toward one goal:{" "}
+              <span className="gradient-text">becoming a cloud engineer.</span>
             </p>
-            <p>
-              In my current position on the Service Desk (1st Line), I am the
-              first point of contact, answering phone calls and troubleshooting
-              a wide range of technical issues for users. This frontline role
-              has honed my problem-solving skills, patience, and ability to
-              communicate technical solutions clearly.
+            <p className="text-muted-foreground">
+              I graduated from UiA in 2025 with a specialization in networking
+              and cybersecurity. Today I'm an IT Consultant on Atea's service
+              desk, solving problems for users across software, hardware and
+              networks.
             </p>
-            <p>
-              My engineering foundation is strong in networking and
-              cybersecurity. I focus on building reliable, efficient systems
-              using Python, TypeScript, and modern cloud tools.
-            </p>
-            <p>
-              During my studies, I collaborated with Telenor Maritime on a
-              real-world project to measure and log mobile and WiFi coverage at
-              sea. I developed a full-stack solution using Flask, InfluxDB,
-              MQTT, and React, integrating both hardware and software
-              components.
-            </p>
-            <p>
-              I've also gained practical experience through an internship and
-              part-time work with Power as IT support, where I solved complex
-              technical issues, automated workflows, and handled direct customer
-              interaction.
-            </p>
-            <p>
-              I work well independently or in a team, I document what I build,
-              and I care about building things that actually work. Outside of
-              tech, I've worked as a community interpreter and election worker,
-              sharpening my communication skills and attention to detail.
+            <p className="text-muted-foreground">
+              Outside work, I build and run my own infrastructure. The apps in
+              my projects run on a Kubernetes cluster I set up and maintain
+              myself, and I'm working through Microsoft's Azure certifications
+              one level at a time.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
-              <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                  <User size={24} />
-                </div>
-                <h3 className="font-medium text-lg">Front-end Development</h3>
-                <p className="text-sm text-muted-foreground">
-                  Creating responsive and intuitive user interfaces with modern
-                  frameworks
-                </p>
-              </CardContent>
-            </Card>
+          <div className="surface-card relative overflow-hidden p-6 md:p-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/15 blur-3xl"
+            />
 
-            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
-              <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                  <Code size={24} />
-                </div>
-                <h3 className="font-medium text-lg">Back-end Systems</h3>
-                <p className="text-sm text-muted-foreground">
-                  Building robust and scalable server-side applications and APIs
+            <div className="relative flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Target className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  Goal
                 </p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold tracking-tight">Cloud Engineer</h3>
+              </div>
+              <Cloud className="ml-auto h-8 w-8 text-primary/40" aria-hidden="true" />
+            </div>
 
-            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
-              <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                  <Server size={24} />
-                </div>
-                <h3 className="font-medium text-lg">Cloud Services</h3>
-                <p className="text-sm text-muted-foreground">
-                  Deploying and managing applications on AWS, Azure, and Google
-                  Cloud
-                </p>
-              </CardContent>
-            </Card>
+            <p className="relative mt-4 text-muted-foreground">
+              Designing, automating and running infrastructure on Azure and
+              Kubernetes. Here's what that goal already rests on:
+            </p>
 
-            <Card className="surface-card hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 group">
-              <CardContent className="flex flex-col items-center text-center p-6 space-y-2">
-                <div className="p-3 rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                  <Database size={24} />
-                </div>
-                <h3 className="font-medium text-lg">Database Design</h3>
-                <p className="text-sm text-muted-foreground">
-                  Designing efficient database schemas and optimizing queries
-                </p>
-              </CardContent>
-            </Card>
+            <ul className="relative mt-5 space-y-2">
+              {groundwork.map((step) => (
+                <li key={step.text}>
+                  <a
+                    href={step.href}
+                    className={cn(
+                      "group flex items-start gap-3 rounded-lg border p-3 text-sm transition-colors",
+                      step.done
+                        ? "border-border/60 bg-background/40 hover:border-primary/40"
+                        : "border-dashed border-border bg-transparent hover:border-primary/40"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full",
+                        step.done
+                          ? "bg-primary text-primary-foreground"
+                          : "border-2 border-dashed border-muted-foreground/50"
+                      )}
+                    >
+                      {step.done && <Check className="h-3 w-3" />}
+                    </span>
+                    <span className={cn("flex-1", step.done ? "text-foreground" : "text-muted-foreground")}>
+                      {step.text}
+                    </span>
+                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="relative mt-6">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                Cloud toolkit
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {cloudStack.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-border/70 bg-secondary/60 px-3 py-1 text-xs font-medium"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
