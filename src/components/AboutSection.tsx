@@ -49,7 +49,7 @@ const AboutSection = () => {
           <div className="space-y-5 text-lg animate-slide-up">
             <p className="text-2xl font-semibold leading-snug tracking-tight text-foreground md:text-3xl">
               I'm a computer engineer working toward one goal:{" "}
-              <span className="gradient-text">becoming a cloud engineer.</span>
+              <span className="text-primary">becoming a cloud engineer.</span>
             </p>
             <p className="text-muted-foreground">
               I graduated from UiA in 2025 with a specialization in networking
