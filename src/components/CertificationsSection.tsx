@@ -68,7 +68,23 @@ const azurePath: Cert[] = [
   },
 ];
 
-const otherCerts = [
+type OtherCert = {
+  name: string;
+  issuer: string;
+  earned: string;
+  link: string;
+  /* Issuer badge art; without one the card shows a plain verified mark. */
+  badge?: string;
+};
+
+/* Newest first. */
+const otherCerts: OtherCert[] = [
+  {
+    name: "Claude 101",
+    issuer: "Anthropic",
+    earned: "2026-06-20",
+    link: "https://verify.skilljar.com/c/3s74bkmga6k3",
+  },
   {
     name: "Postman API Fundamentals Student Expert",
     issuer: "Postman",
@@ -348,12 +364,21 @@ const CertificationsSection = () => {
               rel="noopener noreferrer"
               className="surface-card group flex items-center gap-5 p-5 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
             >
-              <img
-                src={cert.badge}
-                alt={`${cert.name} badge`}
-                loading="lazy"
-                className="h-16 w-16 shrink-0 rounded-full shadow-md transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"
-              />
+              {cert.badge ? (
+                <img
+                  src={cert.badge}
+                  alt={`${cert.name} badge`}
+                  loading="lazy"
+                  className="h-16 w-16 shrink-0 rounded-full shadow-md transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"
+                />
+              ) : (
+                <span
+                  aria-hidden="true"
+                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary shadow-md ring-1 ring-primary/25 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-105"
+                >
+                  <BadgeCheck className="h-8 w-8" />
+                </span>
+              )}
               <div className="min-w-0 flex-1">
                 <h4 className="font-semibold leading-snug">{cert.name}</h4>
                 <p className="mt-0.5 text-sm text-muted-foreground">

@@ -19,6 +19,8 @@ type Role = {
   start: string;
   end: string | null;
   track: "it" | "other";
+  /* Seasonal work: one "YYYY-MM" per stint, drawn as separate marks. */
+  seasons?: string[];
   description: string[];
   tags: string[];
   related?: { label: string; href: string };
@@ -33,13 +35,14 @@ const roles: Role[] = [
     end: null,
     track: "it",
     description: [
-      "First point of contact on the Service Desk, handling incoming calls and providing technical troubleshooting",
-      "Diagnose and resolve a wide range of software, hardware, and network issues for end-users",
-      "Document technical issues, solutions, and processes to improve service desk efficiency",
-      "Escalate complex cases to appropriate technical teams while maintaining ownership of user communication",
-      "Contribute to maintaining service level agreements (SLAs) and user satisfaction metrics",
+      "Run and manage Microsoft 365, Entra ID, Active Directory and Intune for three customer environments, each with its own routines and requirements",
+      "Own tickets in ServiceNow from registration to resolution, keeping the customer updated along the way",
+      "Troubleshoot across identity, clients, Citrix and access, and escalate together with customers and vendors when needed",
+      "Administer Exchange Online, licences, and user onboarding and offboarding",
+      "Guide users over the phone and explain technical solutions in plain language",
+      "Document solutions and routines so colleagues can reuse them",
     ],
-    tags: ["Service desk", "Troubleshooting", "Networking", "SLAs", "Documentation"],
+    tags: ["Microsoft 365", "Entra ID", "Active Directory", "Intune", "Exchange Online", "ServiceNow", "Citrix"],
   },
   {
     id: "exp-power-support",
@@ -49,27 +52,27 @@ const roles: Role[] = [
     end: "2025-10",
     track: "it",
     description: [
-      "Provided first-line technical support and troubleshooting for hardware and software issues",
-      "Documented recurring issues and contributed to process improvement",
-      "Collaborated with internal teams to ensure stable daily operations",
+      "Gave IT support to customers and colleagues, by phone and in person in the store",
+      "Prepared and set up PCs, mobile phones and other IT equipment",
+      "Trained and guided customers and colleagues",
+      "Worked with colleagues to keep operations stable and solve issues quickly",
     ],
-    tags: ["First-line support", "Hardware", "Software", "Process improvement"],
+    tags: ["IT support", "Device setup", "Hardware", "Training"],
   },
   {
     id: "exp-power-intern",
-    title: "Software Development Intern",
+    title: "Software Engineer Intern",
     short: "Software Intern",
-    company: "Power & UiA",
+    company: "Power",
     start: "2024-05",
     end: "2024-12",
     track: "it",
     description: [
-      "Designed and developed a desktop application to automate internal workflows",
-      "Led the full development cycle from requirements gathering to deployment",
-      "Worked cross-functionally with business and technical teams",
-      "Documented the project for handoff and future maintenance",
+      "Spotted a manual workflow and drove an effort to modernise it, building a desktop application in Python and Qt to automate it",
+      "Turned operational needs into a technical solution focused on usability and efficiency",
+      "The application was rolled out nationwide and cut manual work across the organisation",
     ],
-    tags: ["Python", "PyQt", "Automation", "Requirements", "Documentation"],
+    tags: ["Python", "Qt", "Automation", "Requirements"],
     related: { label: "Power's desktop apps in Projects", href: "#project-autotag" },
   },
   {
@@ -77,28 +80,27 @@ const roles: Role[] = [
     title: "Interpreter",
     company: "Tolkenett",
     start: "2022-10",
-    end: null,
+    end: "2024-05",
     track: "other",
     description: [
-      "Facilitated communication between clients and public services (e.g. NAV, healthcare, education)",
-      "Adapted quickly to sensitive or high-stakes scenarios requiring precision and neutrality",
-      "Managed scheduling and reporting independently in a freelance capacity",
+      "Interpreted for healthcare, NAV and the education sector, bridging communication between people from different backgrounds",
+      "Adapted quickly to sensitive situations that called for precision and neutrality",
+      "Managed scheduling and reporting independently as a freelancer",
     ],
     tags: ["Communication", "Public services", "Freelance"],
   },
   {
-    id: "exp-kiwi",
-    title: "Store Supervisor",
-    company: "Kiwi",
-    start: "2021-08",
-    end: "2023-04",
+    id: "exp-valg",
+    title: "Election Official",
+    company: "Valgdirektoratet",
+    start: "2019-09",
+    end: "2025-09",
+    seasons: ["2019-09", "2021-09", "2023-09", "2025-09"],
     track: "other",
     description: [
-      "Responsible for opening and closing the store, cash handling, and shift leadership",
-      "Interacted with customers and ensured smooth daily operations",
-      "Followed operational routines and contributed to team performance",
+      "Checked voter identity and eligibility, and made sure every vote was registered correctly in the electoral roll",
     ],
-    tags: ["Shift leadership", "Customer service", "Cash handling"],
+    tags: ["Public sector", "Accuracy", "Seasonal"],
   },
 ];
 
@@ -109,6 +111,7 @@ const endOf = (r: Role) => (r.end ? addMonths(parseISO(`${r.end}-01`), 1) : NOW)
 
 /* Counted the way CVs count them: both the first and the last month. */
 function duration(r: Role) {
+  if (r.seasons) return `${r.seasons.length} elections`;
   const last = r.end ? parseISO(`${r.end}-01`) : startOfMonth(NOW);
   const months = differenceInCalendarMonths(last, startOf(r)) + 1;
   const y = Math.floor(months / 12);
@@ -118,7 +121,9 @@ function duration(r: Role) {
     .join(" ");
 }
 const range = (r: Role) =>
-  `${format(startOf(r), "MMM yyyy")} – ${r.end ? format(parseISO(`${r.end}-01`), "MMM yyyy") : "Present"}`;
+  r.seasons
+    ? r.seasons.map((s) => s.slice(0, 4)).join(", ")
+    : `${format(startOf(r), "MMM yyyy")} – ${r.end ? format(parseISO(`${r.end}-01`), "MMM yyyy") : "Present"}`;
 
 /* Chart domain: a little before the first role to a little past today. */
 const D0 = parseISO("2021-06-01").getTime();
@@ -152,9 +157,8 @@ const ExperienceSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title">Work Experience</h2>
         <p className="-mt-2 mb-8 max-w-2xl text-lg text-muted-foreground">
-          IT has been the main track since 2023, from first-line support at
-          Power to Atea's service desk. Interpreting has run alongside it
-          since 2022.
+          IT has been the main track since 2023, from IT support at Power to
+          running Microsoft 365 environments for Atea's customers.
         </p>
 
         {/* Career timeline: one bar per role on a shared time axis. IT roles
@@ -194,7 +198,7 @@ const ExperienceSection = () => {
 
             <ul>
               {roles.map((r) => {
-                const left = pct(startOf(r).getTime());
+                const left = Math.max(0, pct(startOf(r).getTime()));
                 const width = pct(endOf(r).getTime()) - left;
                 const isActive = active === r.id;
                 return (
@@ -214,14 +218,25 @@ const ExperienceSection = () => {
                         <span className="block text-muted-foreground sm:hidden">{r.company}</span>
                       </span>
                       <span className="relative block h-9">
-                        <span
-                          className={cn(
-                            "absolute top-1/2 h-2.5 -translate-y-1/2 rounded-[4px] transition-[filter]",
-                            r.track === "it" ? "bg-primary" : "bg-slate-500",
-                            isActive && "brightness-125"
-                          )}
-                          style={{ left: `${left}%`, width: `${width}%` }}
-                        />
+                        {(r.seasons
+                          ? r.seasons
+                              .map((m) => {
+                                const t = parseISO(`${m}-01`).getTime();
+                                return { at: pct(t), w: pct(addMonths(t, 1).getTime()) - pct(t) };
+                              })
+                              .filter((b) => b.at >= 0)
+                          : [{ at: left, w: width }]
+                        ).map((b) => (
+                          <span
+                            key={b.at}
+                            className={cn(
+                              "absolute top-1/2 h-2.5 -translate-y-1/2 rounded-[4px] transition-[filter]",
+                              r.track === "it" ? "bg-primary" : "bg-slate-500",
+                              isActive && "brightness-125"
+                            )}
+                            style={{ left: `${b.at}%`, width: `${b.w}%` }}
+                          />
+                        ))}
                         {isActive && (
                           <span
                             role="tooltip"
