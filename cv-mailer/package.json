@@ -1,0 +1,12 @@
+{
+  "name": "cv-mailer",
+  "private": true,
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.15"
+  }
+}

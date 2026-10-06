@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Local cv-mailer: cd cv-mailer && DRY_RUN=1 PORT=8099 CV_PATH=... node server.mjs
+    proxy: { "/api": "http://127.0.0.1:8099" },
   },
   plugins: [
     react(),

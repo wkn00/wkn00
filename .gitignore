@@ -26,3 +26,6 @@ dist-ssr
 node_modules/
 dist/
 .env
+
+# CVs stay out of git (the repo is public); the cluster gets them as a Secret
+assets/*.pdf

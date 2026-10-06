@@ -45,7 +45,7 @@ spec:
                     app: wael-frontend
       containers:
         - name: nginx
-          image: ghcr.io/wkn00/wael-portfolio:1.8.3
+          image: ghcr.io/wkn00/wael-portfolio:1.9.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -68,6 +68,54 @@ spec:
             limits:
               cpu: 200m
               memory: 96Mi
+        # Emails the CV to visitors who ask for it (nginx proxies /api/ here).
+        # Both Secrets are optional so the site still starts without them;
+        # until they exist the endpoint answers 503. Created by hand, never
+        # from this directory:
+        #   kubectl -n wael create secret generic cv-mailer-smtp \
+        #     --from-literal=GMAIL_USER=kattan.wa@gmail.com \
+        #     --from-literal=GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'
+        #   kubectl -n wael create secret generic cv-pdf \
+        #     --from-file=Wael_Kattan_CV.pdf=<web copy without references>
+        - name: cv-mailer
+          image: ghcr.io/wkn00/wael-cv-mailer:1.0.1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: GMAIL_USER
+              valueFrom:
+                secretKeyRef: { name: cv-mailer-smtp, key: GMAIL_USER, optional: true }
+            - name: GMAIL_APP_PASSWORD
+              valueFrom:
+                secretKeyRef: { name: cv-mailer-smtp, key: GMAIL_APP_PASSWORD, optional: true }
+          volumeMounts:
+            - name: cv-pdf
+              mountPath: /cv
+              readOnly: true
+          # Liveness only: a readiness probe here would pull the whole site
+          # out of rotation whenever the mailer has trouble. It listens on
+          # localhost, so the check runs inside the container.
+          livenessProbe:
+            exec:
+              command: ["wget", "-qO-", "http://127.0.0.1:8080/api/health"]
+            initialDelaySeconds: 10
+            periodSeconds: 30
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000 # "node" in node:alpine; the kubelet needs it numeric
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+          resources:
+            requests:
+              cpu: 10m
+              memory: 48Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+      volumes:
+        - name: cv-pdf
+          secret:
+            secretName: cv-pdf
+            optional: true
 ---
 apiVersion: v1
 kind: Service

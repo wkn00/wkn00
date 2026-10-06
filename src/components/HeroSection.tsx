@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import CvRequestDialog from "@/components/CvRequestDialog";
 import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
 
 const HeroSection = () => {
@@ -33,6 +34,8 @@ const HeroSection = () => {
               </a>
             </Button>
 
+            <CvRequestDialog />
+
             <Button variant="outline" size="lg" asChild>
               <a
                 href="https://www.linkedin.com/in/waelkattan/"
@@ -64,7 +67,7 @@ const HeroSection = () => {
       <a
         href="#about"
         aria-label="Scroll to about section"
-        className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce"
+        className="absolute bottom-10 left-0 right-0 hidden justify-center animate-bounce md:flex"
       >
         <div className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors">
           <span className="text-sm mb-2">Scroll to explore</span>
